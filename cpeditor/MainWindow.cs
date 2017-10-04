@@ -13,4 +13,16 @@ public partial class MainWindow : Gtk.Window
 		Application.Quit();
 		a.RetVal = true;
 	}
+
+	protected void menu_file_new_activate(object sender, EventArgs e)
+	{
+		//do nothing right now
+	}
+
+	protected void menu_file_quit_activate(object sender, EventArgs e)
+	{
+		Application.Quit();
+	}
+
+
 }

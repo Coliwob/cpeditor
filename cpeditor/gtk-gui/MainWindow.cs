@@ -61,11 +61,19 @@ public partial class MainWindow
 
 	private global::Gtk.Action justifyFillAction1;
 
+	private global::Gtk.Action strikethroughAction;
+
+	private global::Gtk.RadioAction propertiesAction;
+
 	private global::Gtk.VBox vbox2;
 
 	private global::Gtk.MenuBar menubar1;
 
+	private global::Gtk.Fixed fixed1;
+
 	private global::Gtk.Toolbar toolbar1;
+
+	private global::Gtk.FontButton fontbutton3;
 
 	private global::Gtk.HBox hbox5;
 
@@ -154,6 +162,11 @@ public partial class MainWindow
 		w1.Add(this.justifyRightAction, null);
 		this.justifyFillAction1 = new global::Gtk.Action("justifyFillAction1", null, null, "gtk-justify-fill");
 		w1.Add(this.justifyFillAction1, null);
+		this.strikethroughAction = new global::Gtk.Action("strikethroughAction", null, null, "gtk-strikethrough");
+		w1.Add(this.strikethroughAction, null);
+		this.propertiesAction = new global::Gtk.RadioAction("propertiesAction", null, null, "gtk-properties", 0);
+		this.propertiesAction.Group = new global::GLib.SList(global::System.IntPtr.Zero);
+		w1.Add(this.propertiesAction, null);
 		this.UIManager.InsertActionGroup(w1, 0);
 		this.AddAccelGroup(this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -173,18 +186,35 @@ public partial class MainWindow
 		w2.Expand = false;
 		w2.Fill = false;
 		// Container child vbox2.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString(@"<ui><toolbar name='toolbar1'><toolitem name='newAction1' action='newAction1'/><separator/><toolitem name='openAction1' action='openAction1'/><toolitem name='saveAction1' action='saveAction1'/><toolitem name='saveAsAction1' action='saveAsAction1'/><separator/><toolitem name='cutAction1' action='cutAction1'/><toolitem name='copyAction1' action='copyAction1'/><toolitem name='pasteAction1' action='pasteAction1'/><separator/><toolitem name='boldAction' action='boldAction'/><toolitem name='italicAction' action='italicAction'/><toolitem name='underlineAction' action='underlineAction'/><separator/><toolitem name='justifyLeftAction' action='justifyLeftAction'/><toolitem name='justifyCenterAction' action='justifyCenterAction'/><toolitem name='justifyRightAction' action='justifyRightAction'/><toolitem name='justifyFillAction1' action='justifyFillAction1'/><separator/></toolbar></ui>");
+		this.fixed1 = new global::Gtk.Fixed();
+		this.fixed1.HeightRequest = 42;
+		this.fixed1.Name = "fixed1";
+		this.fixed1.HasWindow = false;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.UIManager.AddUiFromString(@"<ui><toolbar name='toolbar1'><toolitem name='newAction1' action='newAction1'/><separator/><toolitem name='openAction1' action='openAction1'/><toolitem name='saveAction1' action='saveAction1'/><toolitem name='saveAsAction1' action='saveAsAction1'/><separator/><toolitem name='cutAction1' action='cutAction1'/><toolitem name='copyAction1' action='copyAction1'/><toolitem name='pasteAction1' action='pasteAction1'/><separator/><toolitem name='boldAction' action='boldAction'/><toolitem name='italicAction' action='italicAction'/><toolitem name='underlineAction' action='underlineAction'/><toolitem name='strikethroughAction' action='strikethroughAction'/><separator/><toolitem name='justifyLeftAction' action='justifyLeftAction'/><toolitem name='justifyCenterAction' action='justifyCenterAction'/><toolitem name='justifyRightAction' action='justifyRightAction'/><toolitem name='justifyFillAction1' action='justifyFillAction1'/><separator/></toolbar></ui>");
 		this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar1")));
-		this.toolbar1.WidthRequest = 5;
+		this.toolbar1.WidthRequest = 541;
 		this.toolbar1.Name = "toolbar1";
 		this.toolbar1.ShowArrow = false;
 		this.toolbar1.ToolbarStyle = ((global::Gtk.ToolbarStyle)(3));
 		this.toolbar1.IconSize = ((global::Gtk.IconSize)(3));
-		this.vbox2.Add(this.toolbar1);
-		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.toolbar1]));
-		w3.Position = 1;
-		w3.Expand = false;
-		w3.Fill = false;
+		this.fixed1.Add(this.toolbar1);
+		global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.toolbar1]));
+		w3.X = 4;
+		w3.Y = 3;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.fontbutton3 = new global::Gtk.FontButton();
+		this.fontbutton3.CanFocus = true;
+		this.fontbutton3.Name = "fontbutton3";
+		this.fixed1.Add(this.fontbutton3);
+		global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.fontbutton3]));
+		w4.X = 552;
+		w4.Y = 3;
+		this.vbox2.Add(this.fixed1);
+		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.fixed1]));
+		w5.Position = 1;
+		w5.Expand = false;
+		w5.Fill = false;
 		// Container child vbox2.Gtk.Box+BoxChild
 		this.hbox5 = new global::Gtk.HBox();
 		this.hbox5.Name = "hbox5";
@@ -194,13 +224,13 @@ public partial class MainWindow
 		this.fixed3.Name = "fixed3";
 		this.fixed3.HasWindow = false;
 		this.hbox5.Add(this.fixed3);
-		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox5[this.fixed3]));
-		w4.Position = 1;
+		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox5[this.fixed3]));
+		w6.Position = 1;
 		this.vbox2.Add(this.hbox5);
-		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbox5]));
-		w5.Position = 2;
-		w5.Expand = false;
-		w5.Fill = false;
+		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbox5]));
+		w7.Position = 2;
+		w7.Expand = false;
+		w7.Fill = false;
 		// Container child vbox2.Gtk.Box+BoxChild
 		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow();
 		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
@@ -212,17 +242,17 @@ public partial class MainWindow
 		this.textview1.WrapMode = ((global::Gtk.WrapMode)(2));
 		this.GtkScrolledWindow.Add(this.textview1);
 		this.vbox2.Add(this.GtkScrolledWindow);
-		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.GtkScrolledWindow]));
-		w7.Position = 3;
+		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.GtkScrolledWindow]));
+		w9.Position = 3;
 		// Container child vbox2.Gtk.Box+BoxChild
 		this.statusbar2 = new global::Gtk.Statusbar();
 		this.statusbar2.Name = "statusbar2";
 		this.statusbar2.Spacing = 6;
 		this.vbox2.Add(this.statusbar2);
-		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.statusbar2]));
-		w8.Position = 4;
-		w8.Expand = false;
-		w8.Fill = false;
+		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.statusbar2]));
+		w10.Position = 4;
+		w10.Expand = false;
+		w10.Fill = false;
 		this.Add(this.vbox2);
 		if ((this.Child != null))
 		{
@@ -244,5 +274,7 @@ public partial class MainWindow
 		this.justifyCenterAction.Activated += new global::System.EventHandler(this.Action_JustifyCenter);
 		this.justifyRightAction.Activated += new global::System.EventHandler(this.Action_JustifyRight);
 		this.justifyFillAction1.Activated += new global::System.EventHandler(this.Action_JustifyFill);
+		this.strikethroughAction.Activated += new global::System.EventHandler(this.Action_Strikethrough);
+		this.fontbutton3.FontSet += new global::System.EventHandler(this.Action_SetFont);
 	}
 }

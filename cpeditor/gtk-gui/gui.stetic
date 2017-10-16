@@ -172,6 +172,21 @@
         <property name="StockId">gtk-justify-fill</property>
         <signal name="Activated" handler="Action_JustifyFill" />
       </action>
+      <action id="strikethroughAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-strikethrough</property>
+        <signal name="Activated" handler="Action_Strikethrough" />
+      </action>
+      <action id="propertiesAction">
+        <property name="Type">Radio</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-properties</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+        <property name="Value">0</property>
+        <property name="Group">group1</property>
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
@@ -214,33 +229,56 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Toolbar" id="toolbar1">
+          <widget class="Gtk.Fixed" id="fixed1">
             <property name="MemberName" />
-            <property name="WidthRequest">5</property>
-            <property name="ShowArrow">False</property>
-            <property name="ButtonStyle">BothHoriz</property>
-            <property name="IconSize">LargeToolbar</property>
-            <node name="toolbar1" type="Toolbar">
-              <node type="Toolitem" action="newAction1" />
-              <node type="Separator" />
-              <node type="Toolitem" action="openAction1" />
-              <node type="Toolitem" action="saveAction1" />
-              <node type="Toolitem" action="saveAsAction1" />
-              <node type="Separator" />
-              <node type="Toolitem" action="cutAction1" />
-              <node type="Toolitem" action="copyAction1" />
-              <node type="Toolitem" action="pasteAction1" />
-              <node type="Separator" />
-              <node type="Toolitem" action="boldAction" />
-              <node type="Toolitem" action="italicAction" />
-              <node type="Toolitem" action="underlineAction" />
-              <node type="Separator" />
-              <node type="Toolitem" action="justifyLeftAction" />
-              <node type="Toolitem" action="justifyCenterAction" />
-              <node type="Toolitem" action="justifyRightAction" />
-              <node type="Toolitem" action="justifyFillAction1" />
-              <node type="Separator" />
-            </node>
+            <property name="HeightRequest">42</property>
+            <property name="HasWindow">False</property>
+            <child>
+              <widget class="Gtk.Toolbar" id="toolbar1">
+                <property name="MemberName" />
+                <property name="WidthRequest">541</property>
+                <property name="ShowArrow">False</property>
+                <property name="ButtonStyle">BothHoriz</property>
+                <property name="IconSize">LargeToolbar</property>
+                <node name="toolbar1" type="Toolbar">
+                  <node type="Toolitem" action="newAction1" />
+                  <node type="Separator" />
+                  <node type="Toolitem" action="openAction1" />
+                  <node type="Toolitem" action="saveAction1" />
+                  <node type="Toolitem" action="saveAsAction1" />
+                  <node type="Separator" />
+                  <node type="Toolitem" action="cutAction1" />
+                  <node type="Toolitem" action="copyAction1" />
+                  <node type="Toolitem" action="pasteAction1" />
+                  <node type="Separator" />
+                  <node type="Toolitem" action="boldAction" />
+                  <node type="Toolitem" action="italicAction" />
+                  <node type="Toolitem" action="underlineAction" />
+                  <node type="Toolitem" action="strikethroughAction" />
+                  <node type="Separator" />
+                  <node type="Toolitem" action="justifyLeftAction" />
+                  <node type="Toolitem" action="justifyCenterAction" />
+                  <node type="Toolitem" action="justifyRightAction" />
+                  <node type="Toolitem" action="justifyFillAction1" />
+                  <node type="Separator" />
+                </node>
+              </widget>
+              <packing>
+                <property name="X">4</property>
+                <property name="Y">3</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.FontButton" id="fontbutton3">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <signal name="FontSet" handler="Action_SetFont" />
+              </widget>
+              <packing>
+                <property name="X">552</property>
+                <property name="Y">3</property>
+              </packing>
+            </child>
           </widget>
           <packing>
             <property name="Position">1</property>

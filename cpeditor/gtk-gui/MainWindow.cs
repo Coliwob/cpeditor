@@ -51,19 +51,23 @@ public partial class MainWindow
 
 	private global::Gtk.Action italicAction;
 
-	private global::Gtk.Action strikethroughAction;
+	private global::Gtk.Action underlineAction;
+
+	private global::Gtk.Action justifyLeftAction;
+
+	private global::Gtk.Action justifyCenterAction;
+
+	private global::Gtk.Action justifyRightAction;
+
+	private global::Gtk.Action justifyFillAction1;
 
 	private global::Gtk.VBox vbox2;
 
 	private global::Gtk.MenuBar menubar1;
 
-	private global::Gtk.HBox hbox5;
-
 	private global::Gtk.Toolbar toolbar1;
 
-	private global::Gtk.FontButton fontbutton4;
-
-	private global::Gtk.ColorButton colorbutton4;
+	private global::Gtk.HBox hbox5;
 
 	private global::Gtk.Fixed fixed3;
 
@@ -140,8 +144,16 @@ public partial class MainWindow
 		w1.Add(this.boldAction, null);
 		this.italicAction = new global::Gtk.Action("italicAction", null, null, "gtk-italic");
 		w1.Add(this.italicAction, null);
-		this.strikethroughAction = new global::Gtk.Action("strikethroughAction", null, null, "gtk-strikethrough");
-		w1.Add(this.strikethroughAction, null);
+		this.underlineAction = new global::Gtk.Action("underlineAction", null, null, "gtk-underline");
+		w1.Add(this.underlineAction, null);
+		this.justifyLeftAction = new global::Gtk.Action("justifyLeftAction", null, null, "gtk-justify-left");
+		w1.Add(this.justifyLeftAction, null);
+		this.justifyCenterAction = new global::Gtk.Action("justifyCenterAction", null, null, "gtk-justify-center");
+		w1.Add(this.justifyCenterAction, null);
+		this.justifyRightAction = new global::Gtk.Action("justifyRightAction", null, null, "gtk-justify-right");
+		w1.Add(this.justifyRightAction, null);
+		this.justifyFillAction1 = new global::Gtk.Action("justifyFillAction1", null, null, "gtk-justify-fill");
+		w1.Add(this.justifyFillAction1, null);
 		this.UIManager.InsertActionGroup(w1, 0);
 		this.AddAccelGroup(this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -161,50 +173,34 @@ public partial class MainWindow
 		w2.Expand = false;
 		w2.Fill = false;
 		// Container child vbox2.Gtk.Box+BoxChild
-		this.hbox5 = new global::Gtk.HBox();
-		this.hbox5.Name = "hbox5";
-		this.hbox5.Spacing = 6;
-		// Container child hbox5.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString(@"<ui><toolbar name='toolbar1'><toolitem name='newAction1' action='newAction1'/><separator/><toolitem name='openAction1' action='openAction1'/><toolitem name='saveAction1' action='saveAction1'/><toolitem name='saveAsAction1' action='saveAsAction1'/><separator/><toolitem name='cutAction1' action='cutAction1'/><toolitem name='copyAction1' action='copyAction1'/><toolitem name='pasteAction1' action='pasteAction1'/><separator/><toolitem name='boldAction' action='boldAction'/><toolitem name='italicAction' action='italicAction'/><toolitem name='strikethroughAction' action='strikethroughAction'/></toolbar></ui>");
+		this.UIManager.AddUiFromString(@"<ui><toolbar name='toolbar1'><toolitem name='newAction1' action='newAction1'/><separator/><toolitem name='openAction1' action='openAction1'/><toolitem name='saveAction1' action='saveAction1'/><toolitem name='saveAsAction1' action='saveAsAction1'/><separator/><toolitem name='cutAction1' action='cutAction1'/><toolitem name='copyAction1' action='copyAction1'/><toolitem name='pasteAction1' action='pasteAction1'/><separator/><toolitem name='boldAction' action='boldAction'/><toolitem name='italicAction' action='italicAction'/><toolitem name='underlineAction' action='underlineAction'/><separator/><toolitem name='justifyLeftAction' action='justifyLeftAction'/><toolitem name='justifyCenterAction' action='justifyCenterAction'/><toolitem name='justifyRightAction' action='justifyRightAction'/><toolitem name='justifyFillAction1' action='justifyFillAction1'/><separator/></toolbar></ui>");
 		this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget("/toolbar1")));
 		this.toolbar1.WidthRequest = 5;
 		this.toolbar1.Name = "toolbar1";
+		this.toolbar1.ShowArrow = false;
 		this.toolbar1.ToolbarStyle = ((global::Gtk.ToolbarStyle)(3));
-		this.toolbar1.IconSize = ((global::Gtk.IconSize)(2));
-		this.hbox5.Add(this.toolbar1);
-		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox5[this.toolbar1]));
-		w3.Position = 0;
-		// Container child hbox5.Gtk.Box+BoxChild
-		this.fontbutton4 = new global::Gtk.FontButton();
-		this.fontbutton4.CanFocus = true;
-		this.fontbutton4.Name = "fontbutton4";
-		this.hbox5.Add(this.fontbutton4);
-		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox5[this.fontbutton4]));
-		w4.Position = 1;
-		w4.Expand = false;
-		w4.Fill = false;
-		// Container child hbox5.Gtk.Box+BoxChild
-		this.colorbutton4 = new global::Gtk.ColorButton();
-		this.colorbutton4.CanFocus = true;
-		this.colorbutton4.Events = ((global::Gdk.EventMask)(784));
-		this.colorbutton4.Name = "colorbutton4";
-		this.hbox5.Add(this.colorbutton4);
-		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox5[this.colorbutton4]));
-		w5.Position = 2;
-		w5.Expand = false;
-		w5.Fill = false;
+		this.toolbar1.IconSize = ((global::Gtk.IconSize)(3));
+		this.vbox2.Add(this.toolbar1);
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.toolbar1]));
+		w3.Position = 1;
+		w3.Expand = false;
+		w3.Fill = false;
+		// Container child vbox2.Gtk.Box+BoxChild
+		this.hbox5 = new global::Gtk.HBox();
+		this.hbox5.Name = "hbox5";
+		this.hbox5.Spacing = 6;
 		// Container child hbox5.Gtk.Box+BoxChild
 		this.fixed3 = new global::Gtk.Fixed();
 		this.fixed3.Name = "fixed3";
 		this.fixed3.HasWindow = false;
 		this.hbox5.Add(this.fixed3);
-		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox5[this.fixed3]));
-		w6.Position = 3;
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox5[this.fixed3]));
+		w4.Position = 1;
 		this.vbox2.Add(this.hbox5);
-		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbox5]));
-		w7.Position = 1;
-		w7.Expand = false;
-		w7.Fill = false;
+		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbox5]));
+		w5.Position = 2;
+		w5.Expand = false;
+		w5.Fill = false;
 		// Container child vbox2.Gtk.Box+BoxChild
 		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow();
 		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
@@ -213,19 +209,20 @@ public partial class MainWindow
 		this.textview1 = new global::Gtk.TextView();
 		this.textview1.CanFocus = true;
 		this.textview1.Name = "textview1";
+		this.textview1.WrapMode = ((global::Gtk.WrapMode)(2));
 		this.GtkScrolledWindow.Add(this.textview1);
 		this.vbox2.Add(this.GtkScrolledWindow);
-		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.GtkScrolledWindow]));
-		w9.Position = 2;
+		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.GtkScrolledWindow]));
+		w7.Position = 3;
 		// Container child vbox2.Gtk.Box+BoxChild
 		this.statusbar2 = new global::Gtk.Statusbar();
 		this.statusbar2.Name = "statusbar2";
 		this.statusbar2.Spacing = 6;
 		this.vbox2.Add(this.statusbar2);
-		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.statusbar2]));
-		w10.Position = 3;
-		w10.Expand = false;
-		w10.Fill = false;
+		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.statusbar2]));
+		w8.Position = 4;
+		w8.Expand = false;
+		w8.Fill = false;
 		this.Add(this.vbox2);
 		if ((this.Child != null))
 		{
@@ -237,5 +234,15 @@ public partial class MainWindow
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
 		this.newAction.Activated += new global::System.EventHandler(this.menu_file_new_activate);
 		this.quitAction.Activated += new global::System.EventHandler(this.menu_file_quit_activate);
+		this.cutAction1.Activated += new global::System.EventHandler(this.Action_Cut);
+		this.copyAction1.Activated += new global::System.EventHandler(this.Action_Copy);
+		this.pasteAction1.Activated += new global::System.EventHandler(this.Action_Paste);
+		this.boldAction.Activated += new global::System.EventHandler(this.Action_Bold);
+		this.italicAction.Activated += new global::System.EventHandler(this.Action_Italic);
+		this.underlineAction.Activated += new global::System.EventHandler(this.Action_Underline);
+		this.justifyLeftAction.Activated += new global::System.EventHandler(this.Action_JustifyLeft);
+		this.justifyCenterAction.Activated += new global::System.EventHandler(this.Action_JustifyCenter);
+		this.justifyRightAction.Activated += new global::System.EventHandler(this.Action_JustifyRight);
+		this.justifyFillAction1.Activated += new global::System.EventHandler(this.Action_JustifyFill);
 	}
 }
